@@ -48,7 +48,7 @@ export default function Home() {
       </Head>
       <div className="border w-full lg:w-[80%] min-h-[80%] p-4 text-white flex justify-center items-center flex-col gap-2">
         <h1 className="text-[20px]">Mốc Rewind Nhanh</h1>
-        <p className="text-[12px]>Điểm Cost càng nhỏ thời gian rewind càng nhanh!</p>
+        <p className="text-[12px]">Điểm Cost càng nhỏ thời gian rewind càng nhanh!</p>
         <div className="flex flex-wrap lg:flex-row flex-col gap-4">
           <input
             className="bg-transparent border outline-none p-2 rounded-lg"
