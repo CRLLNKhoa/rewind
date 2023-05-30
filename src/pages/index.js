@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { data } from "./api/hello";
 import { useState } from "react";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,8 +43,12 @@ export default function Home() {
   }
   return (
     <div className="flex justify-center items-center bg-slate-950 w-fulll min-h-screen">
+       <Head>
+        <title>Code by Lương Khoa</title>
+      </Head>
       <div className="border w-full lg:w-[80%] min-h-[80%] p-4 text-white flex justify-center items-center flex-col gap-2">
         <h1 className="text-[20px]">Mốc Rewind Nhanh</h1>
+        <p className="text-[12px]>Điểm Cost càng nhỏ thời gian rewind càng nhanh!</p>
         <div className="flex flex-wrap lg:flex-row flex-col gap-4">
           <input
             className="bg-transparent border outline-none p-2 rounded-lg"
