@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { data } from "./api/hello";
+import { time } from "./api/time";
 import { useState } from "react";
-import Head from "next/head";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,8 @@ export default function Home() {
   const [fromNum, setFrom] = useState(0);
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const [tab,setTab] = useState(1)
 
   const handle = () => {
     setIsLoading(true);
@@ -43,12 +46,9 @@ export default function Home() {
   }
   return (
     <div className="flex justify-center items-center bg-slate-950 w-fulll min-h-screen">
-       <Head>
-        <title>Code by Lương Khoa</title>
-      </Head>
-      <div className="border w-full lg:w-[80%] min-h-[80%] p-4 text-white flex justify-center items-center flex-col gap-2">
+      {tab===1&&<div className="border w-full lg:w-[80%] min-h-[80%] p-4 text-white flex justify-center items-center flex-col gap-2">
         <h1 className="text-[20px]">Mốc Rewind Nhanh</h1>
-        <p className="text-[12px]">Điểm Cost càng nhỏ thời gian rewind càng nhanh!</p>
+        <p className="pb-2">Cost càng nhỏ thời gian rewind càng nhanh</p>
         <div className="flex flex-wrap lg:flex-row flex-col gap-4">
           <input
             className="bg-transparent border outline-none p-2 rounded-lg"
@@ -87,10 +87,14 @@ export default function Home() {
               ))}
           </div>
         )}
-      </div>
+      </div>}
+     
       <button className="fixed text-white  bg-sky-600 bottom-[20px] right-[20px] px-4 py-2 rounded-full" onClick={scrollToTop}>
             ^
         </button>
+        <Link href="/time" className="fixed text-white  bg-sky-600 bottom-[20px] left-[20px] px-4 py-2 rounded-full" onClick={scrollToTop}>
+            Thời gian  trung  bình
+        </Link>
     </div>
   );
 }
