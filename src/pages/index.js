@@ -4,6 +4,7 @@ import { data } from "./api/hello";
 import { time } from "./api/time";
 import { useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +47,9 @@ export default function Home() {
   }
   return (
     <div className="flex justify-center items-center bg-slate-950 w-fulll min-h-screen">
+      <Head>
+            <title>Code by Lương Khoa</title>
+        </Head>
       {tab===1&&<div className="border w-full lg:w-[80%] min-h-[80%] p-4 text-white flex justify-center items-center flex-col gap-2">
         <h1 className="text-[20px]">Mốc Rewind Nhanh</h1>
         <p className="pb-2">Cost càng nhỏ thời gian rewind càng nhanh</p>
