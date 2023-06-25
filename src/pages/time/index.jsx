@@ -13,8 +13,26 @@ export default function Time() {
         if (!isBrowser()) return;
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    const [menu,setMenu] = useState(false)
   return (
     <div className="flex flex-col justify-between w-full items-center pt-8 bg-black">
+       <div className="fixed cursor-pointer z-20 text-white bottom-[16px] left-[8px] px-4 py-2 rounded-full" onClick={()=>setMenu(!menu)}>
+            <img className="w-12" src="/new.svg" alt=""/>
+        </div>
+        <Link target="_blank" href="https://www.facebook.com/lnkhoa1205" className={`fixed cursor-pointer z-20 text-white ${menu?"bottom-[12px]":"-bottom-[80px]"} transition-all duration-500 left-[80px] px-4 py-2 rounded-full`}>
+            <img className="w-12" src="/fb.svg" alt=""/>
+        </Link>
+        <div className={`fixed text-white flex flex-col gap-6 bg-white h-[200px] w-14 z-10 ${menu?"bottom-[20px]":"-bottom-[200px]"} transition-all duration-500 left-[20px] px-4 py-2 rounded-full`}>
+              <Link href="/time">
+                <img className="" src="/time.svg" alt=""/>
+              </Link>
+            <Link href="/upgrade-hero">
+              <img className="" src="/hero.svg" alt=""/>
+            </Link>
+            <Link href="/">
+              <img className="" src="/home.svg" alt=""/>
+            </Link>     
+        </div>
         <Head>
             <title>Code by Lương Khoa</title>
         </Head>
@@ -72,12 +90,9 @@ export default function Time() {
           }
         })}
       </div>
-      <button className="fixed text-white  bg-sky-600 bottom-[20px] right-[20px] px-4 py-2 rounded-full" onClick={scrollToTop}>
-            ^
+      <button className="fixed text-white bottom-[20px] right-[20px] px-4 py-2 rounded-full" onClick={scrollToTop}>
+      <img src="/top.svg" alt=""/>
         </button>
-        <Link href="/" className="fixed text-white  bg-sky-600 bottom-[20px] left-[20px] px-4 py-2 rounded-full" onClick={scrollToTop}>
-            Back
-        </Link>
     </div>
   );
 }
