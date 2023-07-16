@@ -18,27 +18,53 @@ export default function Upgrade() {
     const [menu,setMenu] = useState(false)
   return (
     <>
-      <Head>
-            <title>Code by Lương Khoa</title>
+       <Head>
+            <title>Cody by Lương Khoa</title>
+            <meta name="description" content="Mọi người xem tham khảo thôi nha." />
+            <meta property="og:title" content="Cody by Lương Khoa" key="title" />
+            <meta property="og:description" content="Mọi người xem tham khảo thôi nha." key="description" />
+            <meta property="og:image" content="https://luongkhoa.io.vn/aaa.jpg" key="image" />
+            <meta property="og:url" content="https://check-rewind.vercel.app/" key="url" />
+            <link rel="icon" href="/images/favicon.ico" />
+
+            <meta name="twitter:title" content="Cody by Lương Khoa" />
+            <meta name="twitter:description" content="Mọi người xem tham khảo thôi nha." />
+            <meta name="twitter:image" content="https://luongkhoa.io.vn/aaa.jpg" />
+            <meta name="twitter:card" content="summary_large_image" />
         </Head>
-     <div className="fixed cursor-pointer z-20 text-white bottom-[16px] left-[8px] px-4 py-2 rounded-full" onClick={()=>setMenu(!menu)}>
-            <img className="w-12" src="/new.svg" alt=""/>
-        </div>
-        <Link target="_blank" href="https://www.facebook.com/lnkhoa1205" className={`fixed cursor-pointer z-20 text-white ${menu?"bottom-[12px]":"-bottom-[80px]"} transition-all duration-500 left-[80px] px-4 py-2 rounded-full`}>
-            <img className="w-12" src="/fb.svg" alt=""/>
+
+      <div
+        className="fixed bg-red-600 font-bold cursor-pointer z-30 text-white bottom-[30px] left-[40px] px-4 py-2 rounded-full"
+        onClick={() => setMenu(!menu)}
+      >
+        New
+      </div>
+      <Link
+        target="_blank"
+        href="https://www.facebook.com/lnkhoa1205"
+        className={`fixed cursor-pointer z-30 text-white bottom-[12px]
+        } transition-all duration-500 left-[80px] px-4 py-2 rounded-full`}
+      >
+        
+      </Link>
+      <div onClick={()=>!setMenu(!menu)} className={`fixed ${menu ? "opacity-100 z-20" : "opacity-0 z-0"} duration-500 top-0 bottom-0 left-0 right-0 bg-black`}> </div>
+      <div
+        className={`fixed text-white flex flex-col gap-6  h-[200px] z-30 ${
+          menu ? "left-[10px]" : "-left-[500px]"
+        } transition-all duration-500 bottom-[160px] px-4 py-2 rounded-full`}
+      >
+        <a target="_blank" className="bg-green-600 font-bold px-2 py-1 text-white rounded-full flex items-center justify-center" href="https://luongkhoa.io.vn/">Author</a>
+        <Link
+          className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center"
+          href="/time"
+        >
+          Time Rewind
         </Link>
-        <div className={`fixed text-white flex flex-col gap-6 bg-white h-[200px] w-14 z-10 ${menu?"bottom-[20px]":"-bottom-[200px]"} transition-all duration-500 left-[20px] px-4 py-2 rounded-full`}>
-              <Link href="/time">
-                <img className="" src="/time.svg" alt=""/>
-              </Link>
-            <Link href="/upgrade-hero">
-              <img className="" src="/hero.svg" alt=""/>
-            </Link>
-            <Link href="/">
-              <img className="" src="/home.svg" alt=""/>
-            </Link>      
-        </div>
-      <div className="bg-black min-h-screen md:flex md:flex-col md:items-center md:justify-center lg:flex lg:flex-col lg:items-center lg:justify-center select-none text-white py-2 px-2 pb-24">
+        <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center line-through" href="/upgrade-hero">Upgrade-Hero</Link>
+        <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center" href="/double">Quick Double Rewind</Link>
+        <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center" href="/">Quick Rewind</Link>
+      </div>
+      <div className="bg-black z-10 min-h-screen md:flex md:flex-col md:items-center md:justify-center lg:flex lg:flex-col lg:items-center lg:justify-center select-none text-white py-2 px-2 pb-24">
         <b>Common Heroes</b>
         <div className="flex gap-4 py-4 flex-wrap">
           <img onClick={() =>  handleClick(0)}

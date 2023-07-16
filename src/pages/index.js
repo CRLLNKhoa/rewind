@@ -48,8 +48,8 @@ export default function Home() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   return (
-    <div className="flex justify-center items-center bg-slate-950 w-fulll min-h-screen pb-[100px]">
-      {tab===1&&<div className=" w-full lg:w-[80%] min-h-[80%] p-4 text-white flex justify-center items-center flex-col">
+    <div className="flex z-10  justify-center items-center bg-slate-950 w-fulll min-h-screen pb-[100px]">
+      {tab===1&&<div className="z-10 w-full lg:w-[80%] min-h-[80%] p-4 text-white flex justify-center items-center flex-col">
         <b className="text-[24px] font-bold">Quick Rewind </b>
         <p className="pb-2">The lower the cost, the faster the rewind time</p>
         <div className="flex font-bold flex-wrap items-center lg:flex-row gap-4 text-black bg-white rounded-lg">
@@ -101,28 +101,57 @@ export default function Home() {
         )}
       </div>}
      
-      <button className="fixed text-white bottom-[20px] right-[20px] px-4 py-2 rounded-full" onClick={scrollToTop}>
-            <img className="w-12" src="/top.svg" alt=""/>
-        </button>
-        <div className="fixed cursor-pointer z-20 text-white bottom-[16px] left-[8px] px-4 py-2 rounded-full" onClick={()=>setMenu(!menu)}>
-            <img className="w-12" src="/new.svg" alt=""/>
-        </div>
-        <Link target="_blank" href="https://www.facebook.com/lnkhoa1205" className={`fixed cursor-pointer z-20 text-white ${menu?"bottom-[12px]":"-bottom-[80px]"} transition-all duration-500 left-[80px] px-4 py-2 rounded-full`}>
-            <img className="w-12" src="/fb.svg" alt=""/>
+      <button
+        className="fixed text-white z-30 bottom-[20px] right-[20px] px-4 py-2 rounded-full"
+        onClick={scrollToTop}
+      >
+        <img className="w-12" src="/top.svg" alt="" />
+      </button>
+      <div
+        className="fixed bg-red-600 font-bold cursor-pointer z-30 text-white bottom-[30px] left-[40px] px-4 py-2 rounded-full"
+        onClick={() => setMenu(!menu)}
+      >
+        New
+      </div>
+      <Link
+        target="_blank"
+        href="https://www.facebook.com/lnkhoa1205"
+        className={`fixed cursor-pointer z-30 text-white bottom-[12px]
+        } transition-all duration-500 left-[80px] px-4 py-2 rounded-full`}
+      >
+        
+      </Link>
+      <div onClick={()=>!setMenu(!menu)} className={`fixed ${menu ? "opacity-100 z-20" : "opacity-0 z-0 hidden"} duration-500 top-0 bottom-0 left-0 right-0 bg-black`}> </div>
+      <div
+        className={`fixed text-white flex flex-col gap-6  h-[200px] z-30 ${
+          menu ? "left-[10px]" : "-left-[500px]"
+        } transition-all duration-500 bottom-[160px] px-4 py-2 rounded-full`}
+        onClick={scrollToTop}
+      >
+        <a target="_blank" className="bg-green-600 font-bold px-2 py-1 text-white rounded-full flex items-center justify-center" href="https://luongkhoa.io.vn/">Author</a>
+        <Link
+          className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center"
+          href="/time"
+        >
+          Time Rewind
         </Link>
-        <div className={`fixed text-white flex flex-col gap-6 bg-white h-[200px] w-14 z-10 ${menu?"bottom-[20px]":"-bottom-[200px]"} transition-all duration-500 left-[20px] px-4 py-2 rounded-full`} onClick={scrollToTop}>
-              <Link href="/time">
-                <img className="" src="/time.svg" alt=""/>
-              </Link>
-            <Link href="/upgrade-hero">
-              <img className="" src="/hero.svg" alt=""/>
-            </Link>
-            <Link href="/">
-              <img className="" src="/home.svg" alt=""/>
-            </Link>      
-        </div>
+        <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center line-through" href="/upgrade-hero">Upgrade-Hero</Link>
+        <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center" href="/double">Quick Double Rewind</Link>
+        <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center" href="/">Quick Rewind</Link>
+      </div>
         <Head>
-            <title>Code by Lương Khoa</title>
+            <title>Cody by Lương Khoa</title>
+            <meta name="description" content="Mọi người xem tham khảo thôi nha." />
+            <meta property="og:title" content="Cody by Lương Khoa" key="title" />
+            <meta property="og:description" content="Mọi người xem tham khảo thôi nha." key="description" />
+            <meta property="og:image" content="https://luongkhoa.io.vn/aaa.jpg" key="image" />
+            <meta property="og:url" content="https://check-rewind.vercel.app/" key="url" />
+            <link rel="icon" href="/images/favicon.ico" />
+
+            <meta name="twitter:title" content="Cody by Lương Khoa" />
+            <meta name="twitter:description" content="Mọi người xem tham khảo thôi nha." />
+            <meta name="twitter:image" content="https://luongkhoa.io.vn/aaa.jpg" />
+            <meta name="twitter:card" content="summary_large_image" />
         </Head>
     </div>
   );
