@@ -140,7 +140,7 @@ export default function Home() {
         <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center" href="/">Quick Rewind</Link>
       </div>
         <Head>
-            <title>Cody by Lương Khoa</title>
+            <title>Code by Lương Khoa</title>
             <meta name="description" content="Mọi người xem tham khảo thôi nha." />
             <meta property="og:title" content="Cody by Lương Khoa" key="title" />
             <meta property="og:description" content="Mọi người xem tham khảo thôi nha." key="description" />
