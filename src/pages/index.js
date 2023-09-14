@@ -125,7 +125,7 @@ export default function Home() {
       <div
         className={`fixed text-white flex flex-col gap-6  h-[200px] z-30 ${
           menu ? "left-[10px]" : "-left-[500px]"
-        } transition-all duration-500 bottom-[160px] px-4 py-2 rounded-full`}
+        } transition-all duration-500 bottom-[200px] px-4 py-2 rounded-full`}
         onClick={scrollToTop}
       >
         <a target="_blank" className="bg-green-600 font-bold px-2 py-1 text-white rounded-full flex items-center justify-center" href="https://luongkhoa.io.vn/">Author</a>
@@ -138,9 +138,10 @@ export default function Home() {
         <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center line-through" href="/upgrade-hero">Upgrade-Hero</Link>
         <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center" href="/double">Quick Double Rewind</Link>
         <Link className="bg-white font-bold px-2 py-1 text-black rounded-full flex items-center justify-center" href="/">Quick Rewind</Link>
+        <Link className="bg-red-600 font-bold px-2 py-1 text-white rounded-full flex items-center justify-center" href="/game">Day of Roland (do it in 5 minutes)</Link>
       </div>
         <Head>
-            <title>Code by Lương Khoa</title>
+            <title>Cody by Lương Khoa</title>
             <meta name="description" content="Mọi người xem tham khảo thôi nha." />
             <meta property="og:title" content="Cody by Lương Khoa" key="title" />
             <meta property="og:description" content="Mọi người xem tham khảo thôi nha." key="description" />
